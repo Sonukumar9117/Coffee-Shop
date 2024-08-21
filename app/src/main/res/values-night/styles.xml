@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomRatingBar" parent="@style/Widget.AppCompat.RatingBar">
+        <item name="android:scaleX">1.7</item> <!-- Adjust scale as needed -->
+        <item name="android:scaleY">1.7</item> <!-- Adjust scale as needed -->
+        <item name="android:minHeight">10dp</item>
+        <item name="android:maxHeight">10dp</item>
+    </style>
+
+</resources>
