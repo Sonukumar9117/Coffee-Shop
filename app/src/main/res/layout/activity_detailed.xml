@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/light_gradient"
     tools:context=".activity.DetailedActivity">
     <ScrollView
         android:layout_width="match_parent"
@@ -36,6 +37,7 @@
                     app:srcCompat="@drawable/intro_pic" />
 
                 <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/backBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -84,6 +86,7 @@
                             android:textAlignment="center" />
 
                         <TextView
+                            android:id="@+id/numberItemText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -110,22 +113,25 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/titleTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_weight="1"
                     android:text="Cappoccino"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <ImageView
+                    android:id="@+id/pic"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="2dp"
                     android:src="@drawable/rupee" />
 
                 <TextView
+                    android:id="@+id/priceText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
@@ -136,6 +142,7 @@
             </LinearLayout>
 
             <RatingBar
+                android:id="@+id/ratingBar"
                 style="?android:attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -146,11 +153,11 @@
                 android:rating="3.5" />
 
             <TextView
+                android:id="@+id/descText"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_margin="8dp"
                 android:text="If none of these changes solve the issue, consider using Logcat to check for any errors or warnings related to the RecyclerView. Additionally, you can use Android Studio's Layout Inspector to check how the views are being laid out.
-
 Try these adjustments, and if the issue persists, please share any error messages or unexpected behavior you're seeing, and we can troubleshoot further."
                 android:textAlignment="textStart"
                 android:textColor="@color/black" />
@@ -163,59 +170,25 @@ Try these adjustments, and if the issue persists, please share any error message
                 android:textSize="16sp"
                 android:layout_marginStart="8dp"
                 />
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="bottom"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="8dp"
-                android:orientation="horizontal">
-                <ImageButton
-                    android:layout_gravity="center"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/coffee"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/orange"
-                    />
-                <ImageButton
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/coffee"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/white"
-                    android:layout_marginBottom="5dp"
-                    />
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/coffee"
-                    android:scaleType="centerCrop"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/white"
-                    android:layout_marginBottom="5dp"
-                    />
-                <ImageButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/coffee"
-                    android:backgroundTint="@color/white"
-                    />
-            </LinearLayout>
+                android:layout_marginTop="8dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
             <androidx.appcompat.widget.AppCompatButton
-                android:layout_margin="20dp"
+                android:id="@+id/addToCart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Add to cart"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:textColor="@color/white"
+                android:layout_margin="20dp"
                 android:background="@drawable/orange_bg"
+                android:text="Add to cart"
+                android:textAlignment="center"
                 android:textAllCaps="false"
-                />
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

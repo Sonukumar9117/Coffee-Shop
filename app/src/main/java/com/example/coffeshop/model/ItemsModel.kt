@@ -10,7 +10,7 @@ data class ItemsModel(
     var picUrl: ArrayList<String> = ArrayList(),
     var price: Double = 0.0,
     var rating: Double = 0.0,
-    var numberIntCart: Int = 0,
+    var numberInCart: Int = 0,
     var extra: String = ""
 ):Parcelable{
     constructor(parcel: Parcel) : this(
@@ -30,7 +30,7 @@ data class ItemsModel(
         parcel.writeStringList(picUrl)
         parcel.writeDouble(price)
         parcel.writeDouble(rating)
-        parcel.writeInt(numberIntCart)
+        parcel.writeInt(numberInCart)
         parcel.writeString(extra)
     }
 

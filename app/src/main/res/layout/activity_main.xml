@@ -6,6 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/light_gradient"
     tools:context=".activity.MainActivity">
     <ScrollView
         android:layout_width="match_parent"
@@ -46,7 +47,7 @@
                     android:background="@drawable/edit_text_style"
                     android:drawableLeft="@drawable/search_icon"
                     android:drawablePadding="10dp"
-                    android:ems="10"
+                    android:ems="1"
                     android:hint="@string/search_anything"
                     android:inputType="text"
                     android:padding="15dp"
@@ -86,6 +87,7 @@
                         android:clipToPadding="false"
                         android:paddingStart="8dp"
                         android:paddingEnd="8dp"
+                        android:elevation="3dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -136,7 +138,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:clipToPadding="false"
-                        android:paddingEnd="8dp"
+                        android:paddingEnd="5dp"
+                        android:layout_marginStart="5dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -164,20 +167,19 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Available offer"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/black" />
 
                     <TextView
                         style="@style/text_style"
 
                         android:text="See all"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
 
                         />
                 </LinearLayout>
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="12dp"
                     android:minHeight="200dp"
                     android:layout_marginBottom="100dp">
                   <LinearLayout
@@ -188,16 +190,15 @@
                       app:layout_constraintTop_toTopOf="parent"
                      >
                       <androidx.recyclerview.widget.RecyclerView
-
                           android:id="@+id/recyclerViewOffer"
                           android:layout_marginTop="10dp"
                           android:layout_width="match_parent"
+                          android:elevation="3dp"
                           android:layout_height="wrap_content"
                           android:clipToPadding="false"
                           android:paddingEnd="8dp"
                        />
                   </LinearLayout>
-
                     <ProgressBar
                         android:id="@+id/progressBarOffer"
                         android:layout_width="50dp"
@@ -207,7 +208,6 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
@@ -318,5 +318,4 @@
             android:pointerIcon="wait"
             />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

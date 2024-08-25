@@ -40,6 +40,7 @@ android {
 }
 
 dependencies {
+    implementation("com.google.code.gson:gson:2.8.7")
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
