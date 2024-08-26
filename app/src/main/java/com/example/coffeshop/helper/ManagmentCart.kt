@@ -5,20 +5,21 @@ import android.content.Context
 import android.widget.Toast
 import com.example.coffeshop.model.ItemsModel
 
-
 class ManagmentCart(val context: Context) {
 
     private val tinyDB = TinyDB(context)
 
     fun insertItems(item: ItemsModel?) {
         var listItem = getListCart()
-        val existAlready = listItem.any { it.title == item.title }
-        val index = listItem.indexOfFirst { it.title == item.title }
+        val existAlready = listItem.any { it.title == item?.title ?: null }
+        val index = listItem.indexOfFirst { it.title == item!!.title }
 
         if (existAlready) {
-            listItem[index].numberInCart = item.numberInCart
+            listItem[index].numberInCart = item!!.numberInCart
         } else {
-            listItem.add(item)
+            if (item != null) {
+                listItem.add(item)
+            }
         }
         tinyDB.putListObject("CartList", listItem)
         Toast.makeText(context, "Added to your Cart", Toast.LENGTH_SHORT).show()

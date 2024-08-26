@@ -80,6 +80,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/minusCart"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:src="@drawable/minus"
@@ -97,6 +98,7 @@
                             android:textStyle="bold" />
 
                         <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/plusCart"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:src="@drawable/plus" />
@@ -171,6 +173,7 @@ Try these adjustments, and if the issue persists, please share any error message
                 android:layout_marginStart="8dp"
                 />
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/sizeList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp">
