@@ -13,6 +13,7 @@ class IntroActivity : BaseActivity(){
 
         binding.btnStart.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
     }
 }

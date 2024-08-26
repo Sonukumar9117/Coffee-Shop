@@ -25,10 +25,11 @@ class DetailedActivity : BaseActivity() {
         initSizeList()
         setupCartButtons()
         binding.addToCart.setOnClickListener {
+
             startActivity(Intent(this, CartActivity::class.java))
+            finish()
         }
     }
-
     private fun initSizeList() {
         val sizeList = arrayListOf("1", "2", "3", "4")
         binding.sizeList.adapter = SizeAdapter(sizeList)
@@ -44,7 +45,6 @@ class DetailedActivity : BaseActivity() {
                 .into(binding.shapeableImageView)
         }
     }
-
     private fun bundle() {
         binding.apply {
             item = intent.getParcelableExtra("object")
@@ -58,10 +58,10 @@ class DetailedActivity : BaseActivity() {
             }
             backBtn.setOnClickListener {
                 startActivity(Intent(this@DetailedActivity, MainActivity::class.java))
+                finish()
             }
         }
     }
-
     private fun setupCartButtons() {
         binding.apply {
             plusCart.setOnClickListener {
@@ -69,17 +69,16 @@ class DetailedActivity : BaseActivity() {
                     it.numberInCart = (it.numberInCart ?: 0) + 1
                     numberItemText.text = it.numberInCart.toString()
                     // Optionally update the cart
-//                    managmentCart.insertItems(it)
+                    managmentCart.insertItems(it)
                 }
             }
-
             minusCart.setOnClickListener {
                 item?.let {
                     if (it.numberInCart ?: 0 > 1) {
                         it.numberInCart = (it.numberInCart ?: 0) - 1
                         numberItemText.text = it.numberInCart.toString()
                         // Optionally update the cart
-//                        managmentCart.insertItems(it)
+                        managmentCart.insertItems(it)
                     }
                 }
             }

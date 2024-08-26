@@ -1,5 +1,6 @@
 package com.example.coffeshop.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
@@ -20,6 +21,15 @@ class MainActivity : BaseActivity() {
         initCategory()
         initPopular()
         initOffer()
+        bottomMenu()
+    }
+
+    private fun bottomMenu() {
+        binding.cartBtn.setOnClickListener {
+            startActivity(Intent(this@MainActivity,CartActivity::class.java))
+            finish()
+        }
+
     }
 
     private fun initOffer() {

@@ -26,7 +26,7 @@ class CategoryAdapter (val items:MutableList<CategoryModel>): RecyclerView.Adapt
         holder.binding.titleCat.text = item.title
         holder.binding.root.setOnClickListener {
             lastItemSelectedPosition = selectedItemPosition
-            selectedItemPosition =position
+            selectedItemPosition =holder.adapterPosition
             notifyItemChanged(lastItemSelectedPosition)
             notifyItemChanged(selectedItemPosition)
             if(selectedItemPosition==position){
